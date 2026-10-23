@@ -112,11 +112,3 @@ The chart below shows the empirical execution times captured by the embedded tra
 ![Empirical Scaling Curve](performance_curve.png)
 
 ---
-
-## 🎯 Expected Viva / Evaluation Q&A
-
-💡 **Q1: Why use a Min-Heap instead of a simple sorted array?**  
-* **A:** Inserting elements or re-sorting an array after every single merge operation would require $\mathcal{O}(C)$ time per step, inflating the tree construction runtime to an inefficient $\mathcal{O}(C^2)$. A binary Min-Heap keeps insertions and extractions optimized at $\mathcal{O}(\log C)$.
-
-💡 **Q2: When does this compression algorithm perform poorly?**  
-* **A:** It performs poorly when all characters in a file have uniform, near-identical frequencies. If every character appears an equal number of times, the resulting tree is perfectly balanced. This forces every character to take an equal number of bits—equivalent to raw fixed-length encoding—resulting in zero file size savings (plus minimal metadata overhead).
